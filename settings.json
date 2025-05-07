@@ -40,6 +40,8 @@
 
   //
 
+
+  //
   "cmake.configureOnOpen": false,
   "cmake.showOptionsMovedNotification": false,
   "[typescript]": {
@@ -75,7 +77,7 @@
   "[sql]": {
     "editor.defaultFormatter": "cweijan.vscode-postgresql-client2"
   },
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "One Dark Pro",
   "extensions.autoUpdate": false,
   "explorer.confirmDragAndDrop": false,
   "code-runner.executorMap": {
@@ -234,12 +236,15 @@
     "editor.colorDecorators": false,
     "git.decorations.enabled": false,
     "editor.lightbulb.enabled": "off",
-    "editor.selectionHighlight": false,
     "editor.overviewRulerBorder": false,
     "editor.renderLineHighlight": "none",
     "editor.occurrencesHighlight": "off",
     "problems.decorations.enabled": false,
+
+    "editor.selectionHighlight": false,
     "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "none",
+
     "editor.hideCursorInOverviewRuler": true,
     "editor.gotoLocation.multipleReferences": "goto",
     "editor.gotoLocation.multipleDefinitions": "goto",
