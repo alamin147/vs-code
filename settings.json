@@ -1,12 +1,33 @@
 {
+"explorer.decorations.colors": true,
+"explorer.decorations.badges": true,
+"git.decorations.enabled": true
+,
+"workbench.colorCustomizations": {
+    "editor.selectionBackground": "#4B5E52",
+    "editor.selectionForeground": "#FFFFFF",
+//   "gitDecoration.modifiedResourceForeground": "#FFA500",
+//   "gitDecoration.addedResourceForeground": "#00FF00",
+//   "gitDecoration.deletedResourceForeground": "#FF0000",
+//   "gitDecoration.untrackedResourceForeground": "#00FFFF",
+//   "gitDecoration.ignoredResourceForeground": "#808080",
+//   "gitDecoration.conflictingResourceForeground": "#FF00FF"
+"gitDecoration.modifiedResourceForeground": "#88C0D0",   // arctic blue
+  "gitDecoration.addedResourceForeground": "#A3BE8C",      // soft green
+  "gitDecoration.deletedResourceForeground": "#BF616A",    // desaturated red
+  "gitDecoration.untrackedResourceForeground": "#EBCB8B",  // warm yellow
+  "gitDecoration.ignoredResourceForeground": "#4C566A",    // muted gray
+  "gitDecoration.conflictingResourceForeground": "#D08770" // orange
+
+}
+,
   "workbench.editor.showTabs": "multiple",
   "editor.fontSize": 17,
   "material-icon-theme.saturation": 0,
   "emmet.showSuggestionsAsSnippets": true,
   "editor.inlineSuggest.suppressSuggestions": true,
   "workbench.activityBar.location": "top",
-  "terminal.integrated.env.windows": {},
-  "workbench.iconTheme": "material-icon-theme",
+"terminal.integrated.env.windows": {},
 "window.commandCenter": false,
   "code-runner.runInTerminal": true,
   "workbench.startupEditor": "none",
@@ -18,11 +39,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
-  ///
     "material-icon-theme.files.color": "#42a5f5",
-  //
-
 "explorer.sortOrder": "type",
 "workbench.sideBar.location": "left",
 
@@ -38,10 +55,6 @@
 "editor.accessibilitySupport": "off",
 "chat.editor.wordWrap": "on",
 
-  //
-
-
-  //
   "cmake.configureOnOpen": false,
   "cmake.showOptionsMovedNotification": false,
   "[typescript]": {
@@ -61,7 +74,7 @@
   "accessibility.signals.lineHasInlineSuggestion": {
     "sound": "off"
   },
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+//   "terminal.integrated.enableMultiLinePasteWarning": false,
   "editor.suggest.snippetsPreventQuickSuggestions": true,
   "editor.screenReaderAnnounceInlineSuggestion": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -77,13 +90,10 @@
   "[sql]": {
     "editor.defaultFormatter": "cweijan.vscode-postgresql-client2"
   },
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Monokai",
   "extensions.autoUpdate": false,
   "explorer.confirmDragAndDrop": false,
   "code-runner.executorMap": {
-
-
-
 
     "javascript": "node",
     "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -234,7 +244,6 @@
     "editor.matchBrackets": "always",
     "workbench.tips.enabled": false,
     "editor.colorDecorators": false,
-    "git.decorations.enabled": false,
     "editor.lightbulb.enabled": "off",
     "editor.overviewRulerBorder": false,
     "editor.renderLineHighlight": "none",
@@ -331,7 +340,8 @@
     "workbench.statusBar.visible": false,
     "editor.padding.top": 16,
     "editor.stickyScroll.enabled": false,
-    "editor.lineHeight": 32
+    "editor.lineHeight": 32,
+    "workbench.iconTheme": "material-icon-theme"
 
 
 }
