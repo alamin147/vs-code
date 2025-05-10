@@ -5,7 +5,8 @@
 ,
 "workbench.colorCustomizations": {
     "editor.selectionBackground": "#4B5E52",
-    "editor.selectionForeground": "#FFFFFF",
+     "editor.foldBackground": "#2B2F34",
+    // "editor.selectionForeground": "#FFFFFF",
 //   "gitDecoration.modifiedResourceForeground": "#FFA500",
 //   "gitDecoration.addedResourceForeground": "#00FF00",
 //   "gitDecoration.deletedResourceForeground": "#FF0000",
@@ -20,6 +21,13 @@
   "gitDecoration.conflictingResourceForeground": "#D08770" // orange
 
 }
+,
+
+"javascript.referencesCodeLens.enabled": true,
+"typescript.referencesCodeLens.enabled": true,
+"typescript.implementationsCodeLens.enabled": true,
+"editor.codeLens": true,
+"editor.definitionLinkOpensInPeek": false
 ,
   "workbench.editor.showTabs": "multiple",
   "editor.fontSize": 17,
@@ -36,9 +44,7 @@
   "editor.suggest.preview": true,
 
   "explorer.confirmDelete": false,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+
     "material-icon-theme.files.color": "#42a5f5",
 "explorer.sortOrder": "type",
 "workbench.sideBar.location": "left",
@@ -46,8 +52,10 @@
 "workbench.tree.indent": 15,
 "workbench.tree.enableStickyScroll": false
 ,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+
 "editor.linkedEditing": true,
-"editor.formatOnSave": false,
+// "editor.formatOnSave": false,
 
 "diffEditor.wordWrap": "on",
 "notebook.output.wordWrap": true,
@@ -225,7 +233,6 @@
     "editor.emptySelectionClipboard": true,
     "workbench.editor.enablePreview": false,
     "window.newWindowDimensions": "inherit",
-    "editor.multiCursorModifier": "ctrlCmd",
     "files.trimTrailingWhitespace": true,
     "diffEditor.renderSideBySide": false,
     "editor.snippetSuggestions": "top",
@@ -239,7 +246,7 @@
 
     // Silence the Noise
     "scm.diffDecorations": "none",
-    "editor.hover.delay": 1500,
+    "editor.hover.delay": 500,
     "editor.hover.enabled": true,
     "editor.matchBrackets": "always",
     "workbench.tips.enabled": false,
@@ -314,7 +321,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
-    "prettier.requireConfig": true,
+    // "prettier.requireConfig": true,
     "prettier.useEditorConfig": false,
     "prettier.tabWidth": 4,
 
@@ -341,7 +348,10 @@
     "editor.padding.top": 16,
     "editor.stickyScroll.enabled": false,
     "editor.lineHeight": 32,
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    }
 
 
 }
