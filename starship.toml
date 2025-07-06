@@ -2,9 +2,10 @@
 # Starship prompt – merged modules + new colour scheme
 # ──────────────────────────────────────────────────────────────
 
+# $os\
 format = """
 [](#9A348E)\
-$os\
+${custom.cat}\
 $username\
 [](bg:#DA627D fg:#9A348E)\
 $directory\
@@ -47,7 +48,18 @@ style    = "bg:#9A348E fg:#FFFFFF"
 show_always = true
 style_user  = "bg:#9A348E fg:#FFFFFF"
 style_root  = "bg:#9A348E fg:#FFFFFF"
-format      = "[ alfa ]($style)"   # customise if you prefer $user
+format      = "[alfa ]($style)"   # customise if you prefer $user
+
+
+# ───────── RANDOM CAT EMOJI ─────────
+[custom.cat]
+description = "Random cat face"
+command = "shuf -n1 -e 😺 😸 😹 😻 😼 😽 🐈 🐱 😾 😿 🙀| tr -d '\\n'"
+when    = "true"
+style   = "bg:#9A348E fg:#FFFFFF"
+prefix  = ""
+format  = "[$output ]($style)"
+
 
 # ───────── DIRECTORY ─────────
 [directory]
