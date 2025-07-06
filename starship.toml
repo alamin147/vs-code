@@ -1,15 +1,17 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+# ──────────────────────────────────────────────────────────────
+# Starship prompt – merged modules + new colour scheme
+# ──────────────────────────────────────────────────────────────
 
 format = """
-[](color_orange)\
+[](#9A348E)\
 $os\
 $username\
-[](bg:color_yellow fg:color_orange)\
+[](bg:#DA627D fg:#9A348E)\
 $directory\
-[](fg:color_yellow bg:color_aqua)\
+[](fg:#DA627D bg:#FCA17D)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_blue)\
+[](fg:#FCA17D bg:#86BBD8)\
 $c\
 $rust\
 $golang\
@@ -23,176 +25,148 @@ $custom_cpp\
 $kotlin\
 $haskell\
 $python\
-[](fg:color_blue bg:color_bg3)\
+[](fg:#86BBD8 bg:#06969A)\
 $docker_context\
 $conda\
-[](fg:color_bg3 bg:color_bg1)\
+[](fg:#06969A bg:#33658A)\
 $time\
-[ ](fg:color_bg1)\
-$line_break$character"""
+[ ](fg:#33658A)\
+$line_break$character
+"""
 
-palette = 'gruvbox_dark'
+# Uncomment to remove the leading blank line
+# add_newline = false
 
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#6D7A83'
-#6D7A83 d79921
-
+# ───────── OS / USER ─────────
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style    = "bg:#9A348E fg:#FFFFFF"
 
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
 
 [username]
 show_always = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
-#format = '[ $user ]($style)'
-format = '[ alfa ]($style)'
+style_user  = "bg:#9A348E fg:#FFFFFF"
+style_root  = "bg:#9A348E fg:#FFFFFF"
+format      = "[ alfa ]($style)"   # customise if you prefer $user
 
+# ───────── DIRECTORY ─────────
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
+style  = "fg:#FFFFFF bg:#DA627D"
 format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
+truncation_length  = 3
+truncation_symbol  = "…/"
 
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
+"Documents"  = "󰈙 "
+"Downloads"  = " "
+"Music"      = " "
+"Pictures"   = " "
+"Developer"  = "󰲋 "
 
+# ───────── GIT ─────────
 [git_branch]
 symbol = ""
-style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+style  = "bg:#FCA17D fg:#FFFFFF"
+format = "[ $symbol $branch ]($style)"
 
 [git_status]
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+style  = "bg:#FCA17D fg:#FFFFFF"
+format = "[$all_status$ahead_behind ]($style)"
 
-[nodejs]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+# ───────── LANGUAGE RUNTIMES ─────────
+# all share the same colour block for a cohesive “stack”
 
 [c]
-symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[custom.cpp]
-when = '''[[ -n $(find . -maxdepth 1 -name "*.cpp" 2>/dev/null) ]]'''
-symbol = ""
-style = "bg:color_blue fg:color_fg0"
-format = '[$symbol C++](bg:color_blue fg:color_fg0)'
-
-[custom.html]
-when = '''[[ -n $(find . -maxdepth 1 -name "*.html" 2>/dev/null) ]]'''
-symbol = ""
-style = "bg:color_blue fg:color_fg0"
-format = '[$symbol HTML](bg:color_blue fg:color_fg0)'
-
-[custom.javascript]
-when = '''[[ -n $(find . -maxdepth 1 -name "*.js" 2>/dev/null) ]]'''
-symbol = ""
-style = "bg:color_blue fg:color_fg0"
-format = '[$symbol JS](bg:color_blue fg:color_fg0)'
-
-[custom.typescript]
-when = '''[[ -n $(find . -maxdepth 1 -name "*.ts" 2>/dev/null) ]]'''
-symbol = ""
-style = "bg:color_blue fg:color_fg0"
-format = '[$symbol TS](bg:color_blue fg:color_fg0)'
+symbol = ""
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
 [rust]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
 [golang]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
+
+[nodejs]
+symbol = ""
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
 [php]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
 [java]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
 [kotlin]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
 [haskell]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
 [python]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style  = "bg:#86BBD8 fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
 
+# ───────── CUSTOM FILE‑TYPE DETECTORS ─────────
+[custom.cpp]
+when    = '''[[ -n $(find . -maxdepth 1 -name "*.cpp" 2>/dev/null) ]]'''
+symbol  = ""
+style   = "bg:#86BBD8 fg:#FFFFFF"
+format  = "[ $symbol C++ ]($style)"
+
+[custom.html]
+when    = '''[[ -n $(find . -maxdepth 1 -name "*.html" 2>/dev/null) ]]'''
+symbol  = ""
+style   = "bg:#86BBD8 fg:#FFFFFF"
+format  = "[ $symbol HTML ]($style)"
+
+[custom.javascript]
+when    = '''[[ -n $(find . -maxdepth 1 -name "*.js" 2>/dev/null) ]]'''
+symbol  = ""
+style   = "bg:#86BBD8 fg:#FFFFFF"
+format  = "[ $symbol JS ]($style)"
+
+[custom.typescript]
+when    = '''[[ -n $(find . -maxdepth 1 -name "*.ts" 2>/dev/null) ]]'''
+symbol  = ""
+style   = "bg:#86BBD8 fg:#FFFFFF"
+format  = "[ $symbol TS ]($style)"
+
+# ───────── DOCKER / CONDA / TIME ─────────
 [docker_context]
 symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style  = "bg:#06969A fg:#FFFFFF"
+format = "[ $symbol $context ]($style)"
 
 [conda]
-style = "bg:color_bg3"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+style  = "bg:#06969A fg:#FFFFFF"
+format = "[ $symbol $environment ]($style)"
 
 [time]
-disabled = false
-time_format = "%I:%M%P"
-style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+disabled     = false
+time_format  = "%I:%M%P"   # 12‑hour, lowercase am/pm
+style        = "bg:#33658A fg:#FFFFFF"
+format       = "[ ♥ $time ]($style)"
 
-[line_break]
-disabled = false
-
+# ───────── PROMPT SYMBOLS ─────────
 [character]
-success_symbol = '[ ❯](bold fg:color_green)' 
-error_symbol = '[ ✖](bold fg:color_red)'
-vimcmd_symbol = '[ ❯](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[ ❯](bold fg:color_purple)'
-vimcmd_replace_symbol = '[ ❯](bold fg:color_purple)'
-vimcmd_visual_symbol = '[ ❯](bold fg:color_yellow)'
+success_symbol            = "[ ❯](bold fg:#06969A)"
+error_symbol              = "[ ✖](bold fg:#FCA17D)"
+vimcmd_symbol             = "[ ❯](bold fg:#06969A)"
+vimcmd_replace_one_symbol = "[ ❯](bold fg:#9A348E)"
+vimcmd_replace_symbol     = "[ ❯](bold fg:#9A348E)"
+vimcmd_visual_symbol      = "[ ❯](bold fg:#DA627D)"
